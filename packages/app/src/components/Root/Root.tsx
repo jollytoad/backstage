@@ -51,6 +51,7 @@ import {
 import { MyGroupsSidebarItem } from '@backstage/plugin-org';
 import { SearchModal } from '../search/SearchModal';
 import Score from '@material-ui/icons/Score';
+import { SidebarAddons } from '@backstage/plugin-addons';
 import { useApp } from '@backstage/core-plugin-api';
 import BuildIcon from '@material-ui/icons/Build';
 
@@ -165,6 +166,7 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
           />
           <SidebarItem icon={GraphiQLIcon} to="graphiql" text="GraphiQL" />
           <SidebarItem icon={Score} to="score-board" text="Score board" />
+          <SidebarAddons slot="sidebar" />
         </SidebarScrollWrapper>
         <SidebarDivider />
         <Shortcuts allowExternalLinks />

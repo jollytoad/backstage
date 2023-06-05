@@ -112,6 +112,7 @@ import { PuppetDbPage } from '@backstage/plugin-puppetdb';
 import { DevToolsPage } from '@backstage/plugin-devtools';
 import { customDevToolsPage } from './components/devtools/CustomDevToolsPage';
 import { CatalogUnprocessedEntitiesPage } from '@backstage/plugin-catalog-unprocessed-entities';
+import { AddonsHead, AddonsPage } from '@backstage/plugin-addons';
 
 const app = createApp({
   apis,
@@ -302,6 +303,7 @@ const routes = (
     <Route path="/devtools" element={<DevToolsPage />}>
       {customDevToolsPage}
     </Route>
+    <Route path="/addons" element={<AddonsPage />} />
   </FlatRoutes>
 );
 
@@ -309,6 +311,7 @@ export default app.createRoot(
   <>
     <AlertDisplay transientTimeoutMs={2500} />
     <OAuthRequestDialog />
+    <AddonsHead />
     <AppRouter>
       <Root>{routes}</Root>
     </AppRouter>

@@ -126,6 +126,34 @@ proxy:
   '/puppetdb':
     target: https://your.puppetdb.instance.com
 
+  '/addons':
+    target: http://127.0.0.1:8888/backstage
+    allowedHeaders:
+      - Origin
+      - Access-Control-Expose-Headers
+      - HX-Boosted
+      - HX-Current-URL
+      - HX-History-Restore-Request
+      - HX-Prompt
+      - HX-Request
+      - HX-Target
+      - HX-Trigger-Name
+      - HX-Trigger
+      - HX-Location
+      - HX-Push-URL
+      - HX-Redirect
+      - HX-Refresh
+      - HX-Replace-URL
+      - HX-Reswap
+      - HX-Retarget
+      - HX-Trigger-After-Settle
+      - HX-Trigger-After-Swap
+      - AHX-Full-Page
+    headers:
+      User-Agent: Backstage
+      AHX-Base-Req-URL: http://localhost:7007/api/proxy/addons
+      AHX-Base-Nav-URL: http://localhost:3000/addons
+
 organization:
   name: My Company
 
